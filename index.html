@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master ChatGPT : Transform Your Life With AI Chatbots By Ansh Books</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Dhruv Rathee Chat GPT Course For Absolutely Free...">
+    <meta property="og:image" content="https://ansh-yadav-maths-lover.github.io/img-host/opopopo.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="https://ansh-yadav-maths-lover.github.io/img-host/chat-gpt.svg">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px; /* Adjusted padding */
+            transition: transform 0.3s ease;
+        }
+
+        .header.hidden {
+            transform: translateY(-100%);
+        }
+
+        .header a img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+        }
+
+        .container {
+            max-width: calc(100% - 40px); /* Adjusted width for smaller screens */
+            margin: 80px auto 50px; /* Adjusted margin for smaller screens */
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            flex: 1;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        p {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+        }
+
+        .chapter {
+            margin: 20px 0;
+            border-bottom: 1px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+
+        .chapter-title {
+            cursor: pointer;
+            padding: 15px;
+            background-color: #ecf0f1;
+            color: #2c3e50;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .chapter-title:hover {
+            background-color: #bdc3c7;
+        }
+
+        .content {
+            display: none;
+            padding: 15px;
+            background-color: #f0f2f5;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .content a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .content a:hover {
+            text-decoration: underline;
+        }
+
+        .icon {
+            transition: transform 0.3s ease;
+        }
+
+        .open .icon {
+            transform: rotate(180deg);
+        }
+
+        /* Responsive Styling */
+        @media only screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+
+            .chapter-title {
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 14px;
+                margin-bottom: 20px;
+            }
+
+            .header {
+                padding: 10px 20px; /* Adjusted padding */
+            }
+        }
+
+        .footer {
+            background-color: #eae8e6;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            border-top: 1px solid #bdc3c7;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        /* Adjustments for smaller screens */
+        @media only screen and (max-width: 600px) {
+            .footer {
+                font-size: 12px;
+                padding: 5px 0;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('.header');
+            let lastScrollY = window.scrollY;
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > lastScrollY) {
+                    // Scrolling down
+                    header.classList.add('hidden');
+                } else {
+                    // Scrolling up
+                    header.classList.remove('hidden');
+                }
+                lastScrollY = window.scrollY;
+            });
+
+            const chapterTitles = document.querySelectorAll('.chapter-title');
+
+            chapterTitles.forEach(title => {
+                title.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.icon');
+                    const allContents = document.querySelectorAll('.content');
+                    const allIcons = document.querySelectorAll('.icon');
+
+                    allContents.forEach(c => {
+                        if (c !== content) c.style.display = 'none';
+                    });
+
+                    allIcons.forEach(i => {
+                        if (i !== icon) i.classList.remove('open');
+                    });
+
+                    if (content.style.display === 'block') {
+                        content.style.display = 'none';
+                        icon.classList.remove('open');
+                    } else {
+                        content.style.display = 'block';
+                        icon.classList.add('open');
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <a href="#">
+            <img src="https://ansh-yadav-maths-lover.github.io/img-host/chat-gpt.svg" alt="Ansh Books Logo" >
+        </a>
+        <div style="display: flex; align-items: center;">
+            <span style="flex: 1;"></span>
+            <img src="https://ansh-yadav-maths-lover.github.io/Ansh-Books/Batches/UDAAN-2024/image-assests/Ansh Books-app-transparent.png" alt="Ansh Books Logo" class="logo">
+            <span style="flex: 1;"></span>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Master ChatGPT : Transform Your Life With AI Chatbots</h1>
+        <center>
+            <a href="//academy.dhruvrathee.com/chatgpt" target="_blank">
+                <h4>Credit : Dhruv Rathee</h4>
+            </a>
+        </center>
+
+        <p>This course now offers a bonus workshop presented by Dhruv Rathee at the 1Billion Summit in Dubai. Stay tuned for further course updates, new chapters arriving in June 2024</p>
+
+
+        <div class="chapter">
+            <div class="chapter-title">
+                <span>WELCOME</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M7 10L12 15L17 10" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div> 
+            <div class="content">
+                <p>Welcome to the course!</p>
+                <p><a href="Introduction.html"> ● Introduction</a></p>
+            </div>
+        </div>
+
+        <div class="chapter">
+            <div class="chapter-title">
+                <span>CHAPTER 1</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M7 10L12 15L17 10" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="content">
+                <p>Introduction to Artificial Intelligence</p>
+                <p><a href="What-Is-AI-and-Machine-Learning.html"> ● What Is AI and Machine Learning?</a></p>
+                <p><a href="Understanding-AI-Chatbots.html"> ● Understanding AI Chatbots</a></p>
+                <p><a href="What-Makes-ChatGPT-Special.html"> ● What Makes ChatGPT Special?</a></p>
+                <p><a href="The-RLHF-Method-Explained.html"> ● The RLHF Method Explained</a></p>
+            </div>
+        </div>
+
+        <div class="chapter">
+            <div class="chapter-title">
+                <span>CHAPTER 2</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M7 10L12 15L17 10" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="content">
+                <p>Chatbots and Prompt Engineering</p>
+                <p><a href="ChatGPT-vs-Bing-AI-vs-Google-Bard.html"> ● ChatGPT vs Bing AI vs Google Bard</a></p>
+                <p><a href="What-Is-Prompt-Engineering.html"> ● What Is Prompt Engineering?</a></p>
+                <p><a href="Understanding-Tokens.html"> ● Understanding Tokens</a></p>
+                <p><a href="Temperature-and-Other-Parameters.html"> ● Temperature and Other Parameters</a></p>
+                <p><a href="Toolkit-for-Best-Results.html"> ● Toolkit for Best Results</a></p>
+            </div>
+        </div>
+
+        <div class="chapter">
+            <div class="chapter-title">
+                <span>CHAPTER 3</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M7 10L12 15L17 10" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="content">
+                <p>ChatGPT for Learning and Education</p>
+                <p><a href="How-Foolish-Students-use-ChatGPT.html"> ● How Foolish Students use ChatGPT?</a></p>
+                <p><a href="Studying-for-Exams.html"> ● Studying for Exams</a></p>
+                <p><a href="Solving-Maths-&-Science-Queries.html"> ● Solving Maths & Science Queries</a></p>
+                <p><a href="Studying-Abroad.html"> ● Studying Abroad</a></p>
+                <p><a href="Career-Counseling-and-Motivation.html"> ● Career Counseling and Motivation</a></p>
+            </div>
+        </div>
+
+        <div class="chapter">
+            <div class="chapter-title">
+                <span>CHAPTER 4</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M7 10L12 15L17 10" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="content">
+                <p>ChatGPT in Your Personal Life</p>
+                <p><a href="Food-and-Diet-Planning.html"> ● Food and Diet Planning</a></p>
+                <p><a href="Health-and-Fitness.html"> ● Health and Fitness</a></p>
+                <p><a href="Travel-Planning.html"> ● Travel Planning</a></p>
+                <p><a href="Creative-Storytelling.html"> ● Creative Storytelling</a></p>
+            </div>
+        </div>
+        <div class="chapter">
+            <div class="chapter-title">
+                <span>CHAPTER 5</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M7 10L12 15L17 10" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="content">
+                <p>ChatGPT for Businesses and Employees</p>
+                <p><a href="Application-Your-AI-Business-Coach.html"> ● Application: Your AI Business Coach</a></p>
+                <p><a href="Marketing-&-Listing-your-Business.html"> ● Marketing & Listing your Business</a></p>
+                <p><a href="Market-Research-and-Analysis.html"> ● Market Research and Analysis</a></p>
+                <p><a href="Customer-Feedback-Management.html"> ● Customer Feedback Management</a></p>
+                <!---<p><a href="chapter1.html"> ● Jobs and Interview Preparation</a></p>--->
+            </div>
+        </div>        
+        <div class="chapter">
+            <div class="chapter-title">
+                <span>CHAPTER 6</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                   <path d="M7 10L12 15L17 10" stroke="#000000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <div class="content">
+                <p>Dangers and Limitations of ChatGPT</p>
+                <p><a href="Limitations-&-Biases-of-LLMs.html"> ● Limitations & Biases of LLMs</a></p>
+                <p><a href="Should-We-Be-Scared-of-AI.html"> ● Should We Be Scared of AI?</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Ansh Books</p>
+    </div>
+</body>
+</html>
