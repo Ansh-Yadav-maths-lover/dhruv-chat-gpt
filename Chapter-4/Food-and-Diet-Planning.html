@@ -19,72 +19,9 @@
 
     <title>Dhruv Rathee Chat GPT By Ansh </title>
     <link rel="stylesheet" href="https://ansh-yadav-maths-lover.github.io/anonymous-ansh/styles.css">
+    <link rel="stylesheet" href="https://ansh-yadav-maths-lover.github.io/dhruv-chat-gpt/css/main.css">
+    <script src="https://ansh-yadav-maths-lover.github.io/dhruv-chat-gpt/script/main.js"></script>
 </head>
-<style>
-html {
-  font-family: Poppins;
-  background: #000;
-  margin: 0;
-  padding: 0
-}
-
-	  .plyr {
-                height: 100%;
-                width: 100%;
-            }
-
-.loading {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #000;
-        z-index: 9999;
-    }
-    
-    .loading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  }
-
-.circle {
-  width: 20px;
-  height: 20px;
-  margin: 10px;
-  border-radius: 50%;
-  animation: loader-animation 0.75s ease infinite;
-}
-
-.circle:nth-child(1) {
-  background-color: #D90429;
-  animation-delay: 0s;
-}
-
-.circle:nth-child(2) {
-  background-color: #FFA300;
-  animation-delay: 0.15s;
-}
-
-.circle:nth-child(3) {
-  background-color: #048BA8;
-  animation-delay: 0.3s;
-}
-
-@keyframes loader-animation {
-  0% {
-    transform: scale(0);
-    opacity: 0.7;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0;
-  }
-}
-
-</style>
 
 <body>
     <header>
@@ -124,78 +61,10 @@ html {
          
         </div>
     </footer>
+    <div id="telegram-popup" class="telegram-popup">
+      <img class="telegram-logo" src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram Logo">
+      <p>Join our Telegram channel for the latest updates: <a href="tg://resolve?domain=ansh_books" target="_blank">Ansh Books Telegram</a></p>
+      <button id="close-popup">&times;</button>
+  </div>
 </body>
-<script>
-      document.addEventListener("DOMContentLoaded", () => {
-  const video = document.querySelector("video");
-  const src = video.getElementsByTagName("source")[0].src;
-  const options = {};
-  if (Hls.isSupported()) {
-    const hlsConfig = {
-      maxMaxBufferLength: 100,
-    };
-    const hls = new Hls(hlsConfig);
-    hls.loadSource(src);
-    hls.on(Hls.Events.MANIFEST_PARSED, function(event, data) {
-      const levels = hls.levels.map(level => level.height);
-      options.quality = {
-        default: levels[0],
-        options: levels,
-        forced: true,
-        onChange: (selected) => {
-          hls.levels.forEach((level, i) => {
-            if (level.height === selected) {
-              hls.currentLevel = i;
-            }
-          });
-        },
-      };
-      options.previewThumbnails = {
-        enabled: true,
-        src: 'https://fast.wistia.com/embed/medias/6qh5pm4d9q.m3u8'
-      };
-      options.tooltips = {
-        controls: true,
-        seek: true
-      };
-      options.speed = {
-        selected: 1,
-        options: [ 1, 1.25,1.5, 2,2.25, 2.5, 3, 3.5, 4],
-      };
-      options.listeners = {
-        seeking: function(event) {
-          const currentTime = video.currentTime;
-          const seekTime = 10;
-          if (event.detail.interaction == "doubletap") {
-            video.currentTime = Math.min(currentTime + seekTime, video.duration);
-          }
-        },
-        pause: function(event) {
-          if (event.detail.interaction == "tap" && !video.paused) {
-            video.pause();
-          }
-        }
-      };
-      const bodyElement = document.querySelector("body");
-      const loadingElement = document.getElementById("loading");
-      loadingElement.style.display = "none";
-      bodyElement.style.visibility = "visible";
-      new Plyr(video, options);
-    });
-    hls.attachMedia(video);
-    window.hls = hls;
-  } else {
-    options.speed = {
-      selected: 1,
-      options: [0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4],
-    };
-    const bodyElement = document.querySelector("body");
-      const loadingElement = document.getElementById("loading");
-      loadingElement.style.display = "none";
-      bodyElement.style.visibility = "visible";
-    new Plyr(video, options);
-  }
-});
-
-</script>
 </html>
