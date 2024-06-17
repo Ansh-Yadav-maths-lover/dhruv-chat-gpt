@@ -40,7 +40,7 @@
             height: 70%; /* Adjusted height */
             border: 1px solid #ccc;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 20px; /* Adjusted margin */
+            margin-top: 80px; /* Adjusted margin */
         }
         footer {
             position: absolute;
@@ -124,13 +124,12 @@
         <button class="refresh-btn" onclick="refreshPDF()">Refresh PDF</button>
     </div>
 
-    <script src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"></script>
     <script>
         window.onload = function() {
             var urlParams = new URLSearchParams(window.location.search);
             var pdfUrl = urlParams.get('url');
             if (pdfUrl) {
-                document.getElementById('pdf-viewer').src = "https://docs.google.com/viewer?url=" + pdfUrl + "&embedded=true";
+                document.getElementById('pdf-viewer').src = "https://docs.google.com/viewer?url=" + encodeURIComponent(pdfUrl) + "&embedded=true";
             }
 
             // Telegram popup script
